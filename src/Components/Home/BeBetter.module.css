@@ -1,0 +1,37 @@
+.BeBetter {
+  width: 47%;
+  margin: auto;
+  text-align: center;
+}
+
+.BeBetter h1 {
+  margin-top: 40px;
+  font-weight: 400;
+  font-size: 2.5rem;
+  opacity: 0.7;
+}
+
+.BeBetter h2 {
+  margin: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 900;
+  color: #c69749;
+  font-size: 2.3rem;
+}
+
+.BeBetter p {
+  font-size: 1rem;
+  line-height: 25px;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 800px) {
+  .BeBetter {
+    width: auto;
+    padding: 10px;
+  }
+  .BeBetter p {
+    padding: 20px;
+  }
+}

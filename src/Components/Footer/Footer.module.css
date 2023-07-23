@@ -1,0 +1,80 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px;
+  margin: 0px 180px;
+}
+
+.footer h1 {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin: 15px 0px;
+  opacity: 0.9;
+}
+
+.footer p {
+  font-size: 0.9rem;
+  font-weight: 800;
+  opacity: 0.7;
+  text-decoration: underline;
+  margin: 5px 0px;
+  transition: 0.3s;
+}
+
+.footer p:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.address p {
+  text-decoration: none;
+}
+
+.credites {
+  margin: 0px 180px;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid black;
+}
+
+.credites h1 {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.credites p {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.credites a {
+  text-decoration: underline;
+  color: black;
+  font-weight: 900;
+}
+
+.fort {
+  background-color: rgb(240, 240, 240);
+}
+
+@media only screen and (max-width: 800px) {
+  .footer {
+    margin: 0px 10px;
+    padding: 10px;
+  }
+  .footer div {
+    width: 35%;
+  }
+  .credites {
+    margin: 10px;
+    flex-direction: column;
+  }
+  .credites h1 {
+    margin-top: 10px;
+  }
+}

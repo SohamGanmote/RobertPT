@@ -1,0 +1,60 @@
+.AboutPT {
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 150px;
+  padding-top: 200px;
+  padding-bottom: 80px;
+}
+
+.AboutPT img {
+  width: 50%;
+  margin: 50px 0px;
+  object-fit: cover;
+}
+
+.AboutPT h1 {
+  margin: 20px 30px;
+  font-size: 2.5rem;
+}
+
+.AboutPT p {
+  margin: 20px 30px;
+  font-size: 1.1rem;
+}
+
+.AboutPT button {
+  margin: 10px 30px;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 800px) {
+  .AboutPT {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    padding-top: 700px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .AboutPT img {
+    width: 300px;
+    margin: 0px;
+    object-fit: cover;
+  }
+
+  .AboutPT h1 {
+    margin: 20px;
+    font-size: 30px;
+    text-align: left;
+  }
+
+  .AboutPT p {
+    font-size: 20px;
+    margin: 20px;
+    text-align: left;
+  }
+}
