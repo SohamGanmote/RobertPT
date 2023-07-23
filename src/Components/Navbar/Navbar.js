@@ -10,6 +10,39 @@ import insta from "../../Assets/Social Media/instagram.svg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const LanguageSelecter = () => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+  return (
+    <>
+      <div className={styles.backDrop} />
+      <div className={styles.popUp}>
+        <h1>Select Language</h1>
+        <button
+          onClick={() => {
+            localStorage.setItem("language", "English");
+            window.location.reload();
+          }}
+        >
+          English
+        </button>
+        <button
+          onClick={() => {
+            localStorage.setItem("language", "Hindi");
+            window.location.reload();
+          }}
+        >
+          हिंदी
+        </button>
+      </div>
+    </>
+  );
+};
+
 const Navbar = () => {
   const redirect = useNavigate();
   const [display, setDisplay] = useState(false);
@@ -26,7 +59,7 @@ const Navbar = () => {
     if (language === null) {
       setDisplayPopUp(true);
     }
-  }, []);
+  }, [language]);
 
   return (
     <>
@@ -93,30 +126,7 @@ const Navbar = () => {
 
       {/* Popup To select Language */}
 
-      {displayPopUp && (
-        <>
-          <div className={styles.backDrop} />
-          <div className={styles.popUp}>
-            <h1>Select Language</h1>
-            <button
-              onClick={() => {
-                localStorage.setItem("language", "English");
-                window.location.reload();
-              }}
-            >
-              English
-            </button>
-            <button
-              onClick={() => {
-                localStorage.setItem("language", "Hindi");
-                window.location.reload();
-              }}
-            >
-              हिंदी
-            </button>
-          </div>
-        </>
-      )}
+      {displayPopUp && <LanguageSelecter />}
     </>
   );
 };
