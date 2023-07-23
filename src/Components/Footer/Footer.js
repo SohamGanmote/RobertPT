@@ -1,6 +1,9 @@
 import styles from "./Footer.module.css";
+import Text from "./text";
 const Footer = () => {
   const language = localStorage.getItem("language");
+  let text = Text("Soham", "male", "muscle gain", 9325293606);
+  const phoneNo = "917775920250";
   return (
     <div className={styles.fort}>
       {language === "English" ? (
@@ -8,7 +11,7 @@ const Footer = () => {
           <div className={styles.footer}>
             <div className={styles.address}>
               <h1>Address</h1>
-              <p>Balagi Nagar, Kupwad Road, Sangli 416416.</p>
+              <p>Madvnagar, Sangli 416416.</p>
             </div>
             <div className={styles.services}>
               <h1>Services</h1>
@@ -18,9 +21,33 @@ const Footer = () => {
             </div>
             <div className={styles.support}>
               <h1>Support</h1>
-              <p>Whatsapp</p>
-              <p>Instagram</p>
-              <p>Email</p>
+              <p>
+                <a
+                  href={`https://api.whatsapp.com/send?phone=${phoneNo}&text=${text}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Whatsapp
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.instagram.com/robertawale333/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Instagram
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbFbLNXhkWGHnzFXbWZZcVKlHZZXNTMhrlZCvmzMMcBQTHjVmKrtjWSpdthMgGCnxdcQrQ"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Email
+                </a>
+              </p>
             </div>
             <div>
               <h1>Language</h1>
@@ -45,7 +72,7 @@ const Footer = () => {
           <div className={styles.credites}>
             <p>© COPYRIGHT 2023. ALL RIGHTS RESERVED.</p>
             <h1>
-              Website Design by{" "}
+              Website Design by
               <a
                 href="https://www.instagram.com/soham___g___/"
                 target="_blank"
@@ -61,7 +88,7 @@ const Footer = () => {
           <div className={styles.footer}>
             <div className={styles.address}>
               <h1>पता</h1>
-              <p>बलागी नगर, कुपवाड रोड, सांगली 416416.</p>
+              <p>माधवनगर, सांगली 416416.</p>
             </div>
             <div className={styles.services}>
               <h1>सेवाएं</h1>
@@ -71,9 +98,33 @@ const Footer = () => {
             </div>
             <div className={styles.support}>
               <h1>समर्थन</h1>
-              <p>व्हाट्सएप</p>
-              <p>इंस्टाग्राम</p>
-              <p>ईमेल</p>
+              <p>
+                <a
+                  href={`https://api.whatsapp.com/send?phone=${phoneNo}&text=${text}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  व्हाट्सएप
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.instagram.com/robertawale333/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  इंस्टाग्राम
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbFbLNXhkWGHnzFXbWZZcVKlHZZXNTMhrlZCvmzMMcBQTHjVmKrtjWSpdthMgGCnxdcQrQ"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  ईमेल
+                </a>
+              </p>
             </div>
             <div>
               <h1>भाषा</h1>
