@@ -1,9 +1,23 @@
 import styles from "./Footer.module.css";
 import Text from "./text";
+import { useState } from "react";
+import Modal from "../UI/Modal/ContactModal";
+
 const Footer = () => {
   const language = localStorage.getItem("language");
+
+  const [displayModal, setDisplayModal] = useState(false);
+
+  const [selectedGoal, setSelectedGoal] = useState("Select an option");
+  const [selectedGender, setSelectedGender] = useState("Select an option");
+
   let text = Text("Soham", "male", "muscle gain", 9325293606);
   const phoneNo = "917775920250";
+
+  const handelWhatsAppMessage = () => {
+    setDisplayModal(true);
+  };
+
   return (
     <div className={styles.fort}>
       {language === "English" ? (
@@ -21,15 +35,7 @@ const Footer = () => {
             </div>
             <div className={styles.support}>
               <h1>Support</h1>
-              <p>
-                <a
-                  href={`https://api.whatsapp.com/send?phone=${phoneNo}&text=${text}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Whatsapp
-                </a>
-              </p>
+              <p onClick={handelWhatsAppMessage}>Whatsapp</p>
               <p>
                 <a
                   href="https://www.instagram.com/robertawale333/"
@@ -72,7 +78,7 @@ const Footer = () => {
           <div className={styles.credites}>
             <p>© COPYRIGHT 2023. ALL RIGHTS RESERVED.</p>
             <h1>
-              Website Design by
+              Website Design by{" "}
               <a
                 href="https://www.instagram.com/soham___g___/"
                 target="_blank"
@@ -161,6 +167,15 @@ const Footer = () => {
             </h1>
           </div>
         </>
+      )}
+      {displayModal && (
+        <Modal
+          selectedGoal={selectedGoal}
+          selectedGender={selectedGender}
+          setSelectedGoal={setSelectedGoal}
+          setSelectedGender={setSelectedGender}
+          // make state from name input and mobile input
+        />
       )}
     </div>
   );
