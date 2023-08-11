@@ -1,12 +1,24 @@
-const text = (name, gender, plan, contact) => {
-  return `Hey RobertPT, 
-
-
-  \nI'm ${name}, a ${gender} seeking to ${plan}. I'm determined to improve my fitness and heard about your expertise. Can you guide me with tips, workout routines, and dietary advice? I'd also love to discuss plans to kickstart my muscle gain journey. Your support would mean a lot! Please contact me at ${contact}. Looking forward to hearing from you soon! 
-  
-  \nThanks,
-  
-  
-  \nSoham`;
+const text = (name, gender, plan, contact, age, date) => {
+  const formatDate = (date) => {
+    const options = {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    };
+    return new Date(date).toLocaleDateString("en-US", options);
+  };
+  return (
+    `📋 *Client Details* 📋%0A%0A` +
+    `*Name:* ${name}%0A` +
+    `*Gender:* ${gender}%0A` +
+    `*Plan:* ${plan}%0A` +
+    `*Contact:* ${contact === undefined ? "Prefer Not To Say" : contact}%0A` +
+    `*Age:* ${age === undefined ? "Prefer Not To Say" : age}%0A` +
+    `*Joining Date:* ${
+      date === undefined ? "Prefer Not To Say" : formatDate(date)
+    }%0A`
+  );
 };
+
 export default text;

@@ -1,22 +1,24 @@
 import styles from "./Footer.module.css";
-import Text from "./text";
-import { useState } from "react";
 import Modal from "../UI/Modal/ContactModal";
+import useWhatsAppModal from "../WhatsAppModal/useWhatsAppModal";
 
 const Footer = () => {
   const language = localStorage.getItem("language");
 
-  const [displayModal, setDisplayModal] = useState(false);
-
-  const [selectedGoal, setSelectedGoal] = useState("Select an option");
-  const [selectedGender, setSelectedGender] = useState("Select an option");
-
-  let text = Text("Soham", "male", "muscle gain", 9325293606);
-  const phoneNo = "917775920250";
-
-  const handelWhatsAppMessage = () => {
-    setDisplayModal(true);
-  };
+  const {
+    displayModal,
+    selectedGoal,
+    selectedGender,
+    details,
+    selectedDate,
+    openModal,
+    closeModal,
+    setSelectedGoal,
+    setSelectedGender,
+    setDetails,
+    setSelectedDate,
+    submitWhatsApp,
+  } = useWhatsAppModal();
 
   return (
     <div className={styles.fort}>
@@ -35,7 +37,7 @@ const Footer = () => {
             </div>
             <div className={styles.support}>
               <h1>Support</h1>
-              <p onClick={handelWhatsAppMessage}>Whatsapp</p>
+              <p onClick={openModal}>Whatsapp</p>
               <p>
                 <a
                   href="https://www.instagram.com/robertawale333/"
@@ -104,15 +106,7 @@ const Footer = () => {
             </div>
             <div className={styles.support}>
               <h1>समर्थन</h1>
-              <p>
-                <a
-                  href={`https://api.whatsapp.com/send?phone=${phoneNo}&text=${text}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  व्हाट्सएप
-                </a>
-              </p>
+              <p onClick={openModal}>व्हाट्सएप</p>
               <p>
                 <a
                   href="https://www.instagram.com/robertawale333/"
@@ -174,7 +168,12 @@ const Footer = () => {
           selectedGender={selectedGender}
           setSelectedGoal={setSelectedGoal}
           setSelectedGender={setSelectedGender}
-          // make state from name input and mobile input
+          details={details}
+          setDetails={setDetails}
+          submitWhatsApp={submitWhatsApp}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          closeModal={closeModal}
         />
       )}
     </div>
